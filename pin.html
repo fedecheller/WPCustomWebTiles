@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WP Pin to Start</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
+    <script src="js/main.js"></script>
+</head>
+<body onload="document.getElementById('TileOverlay').style.visibility='visible';">
+    <div id="TileLabel" style="font-size: 31px; position: absolute; top: 260px; left: 20px;width:260px; height:32px;color:white;z-index:2"></div>
+    <div id="TileOverlay" style='height: 100%; width: 100%; top: 0px; left: 0px; position: fixed; color: black; visibility: hidden;z-index:1'>
+        <img id="TileIcon" width="320" height="320" />
+        <div id="TileInfo" style='margin-top: 40px;color:white'>Pin to start using the menu...
+            <br /><br /><a href="index.html"><img src="img/left.png" style="border-style: none" title="Back" alt="Back" /></a>
+        </div>
+    </div>
+    <script>
+        var _gaq=[['_setAccount','UA-30754085-2'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+
+        if(document.referrer.indexOf('wpt/') > 1)
+        {
+            var color = getQSParam("cl");
+            document.body.style.backgroundColor = color;
+            document.getElementById('TileOverlay').style.backgroundColor = color;
+            document.getElementById('TileLabel').innerText = getQSParam("lb");
+            document.getElementById('TileIcon').src = getQSParam("ic");
+        }
+        else
+        {
+            //var url = (getQSParam("xt") == "0") ? "http://" : "https://";
+            var url = getQSParam("lc");
+            document.location.href = "http://" + url;
+        }
+    </script>
+</body>
+</html>

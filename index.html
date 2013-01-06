@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Windows Phone - Custom Tile Creator</title>
+        <meta name="description" content="Windows Phone - Custom Tile Creator">
+        <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="js/main.js"></script>
+    </head>
+    <body class="wpbody">
+    <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+        <div style="margin: 5px">
+            <h5>Windows Phone <span class="wphgtxt">'Pin to start'</span> web tile creator</h5>
+            <h1>creator
+            <a class="wplink" href="javascript:$.pageslide({ direction: 'left', modal: true, href: 'http://www.cheller.info/wpt/help.html' })">help<a>
+            <a class="wplink" href="javascript:$.pageslide({ direction: 'left', modal: true, href: 'http://www.cheller.info/wpt/about.html' })">about</a>
+            </h1>
+            <label class="wplbltxt" for="lc">Url to Pin</label>
+            <br />
+            http://<input type="text" id="lc" class="wpinput" style="width: 70%" />
+            <br /><br />
+            <label class="wplbltxt" for="cl">Tile color</label>
+            <br />
+            <select name="cl" id="cl" class="wpinput" style="width: 84%">
+                <option value="highlight" selected>theme</option>
+                <option value="#A4C400">green lemon</option>
+                <option value="#60AA17">green</option>
+                <option value="#008A00">emerald</option>
+                <option value="#01ABAA">teal</option>
+                <option value="#1BA1E2">cyan</option>
+                <option value="#0050EF">cobalt</option>
+                <option value="#6A00FF">indigo</option>
+                <option value="#AA00FF">violet</option>
+                <option value="#F473D0">pink</option>
+                <option value="#D90073">fuchsia</option>
+                <option value="#A20025">purple</option>
+                <option value="#E51400">red</option>
+                <option value="#FA6900">orange</option>
+                <option value="#F0A30A">amber</option>
+                <option value="#E3C800">yellow</option>
+                <option value="#835A2C">brown</option>
+                <option value="#6D8764">olive</option>
+                <option value="#657688">steel</option>
+                <option value="#765F89">gray</option>
+            </select>
+            <br /><br />
+            <label class="wplbltxt" for="ic">Icon</label>
+            <br />
+            <div class="wplist" onclick="selectIcon()">
+                <div><img src="img/tile_custom.png" id="imgCustom" alt="custom" title="custom"/></div>
+                <div><img src="img/tile_bing.png"/></div>
+                <div><img src="img/tile_box.png"/></div>
+                <div><img src="img/tile_calendar.png"/></div>
+                <div><img src="img/tile_clock.png"/></div>
+                <div><img src="img/tile_contacts.png"/></div>
+                <div><img src="img/tile_device.png"/></div>
+                <div><img src="img/tile_dropbox.png"/></div>
+                <div><img src="img/tile_ebay.png"/></div>
+                <div><img src="img/tile_facebook.png"/></div>
+                <div><img src="img/tile_feed.png"/></div>
+                <div><img src="img/tile_fit.png"/></div>
+                <div><img src="img/tile_flash.png"/></div>
+                <div><img src="img/tile_gmail.png"/></div>
+                <div><img src="img/tile_gps.png"/></div>
+                <div><img src="img/tile_icq.png"/></div>
+                <div><img src="img/tile_ie.png"/></div>
+                <div><img src="img/tile_light.png"/></div>
+                <div><img src="img/tile_mail.png"/></div>
+                <div><img src="img/tile_maps.png"/></div>
+                <div><img src="img/tile_msn.png"/></div>
+                <div><img src="img/tile_nav.png"/></div>
+                <div><img src="img/tile_network.png"/></div>
+                <div><img src="img/tile_paypal.png"/></div>
+                <div><img src="img/tile_pdf.png"/></div>
+                <div><img src="img/tile_reader.png"/></div>
+                <div><img src="img/tile_secondlife.png"/></div>
+                <div><img src="img/tile_sky.png"/></div>
+                <div><img src="img/tile_task.png"/></div>
+                <div><img src="img/tile_tesseract.png"/></div>
+                <div><img src="img/tile_track.png"/></div>
+                <div><img src="img/tile_twitter.png"/></div>
+                <div><img src="img/tile_vodafone.png"/></div>
+                <div><img src="img/tile_weather.png"/></div>
+                <div><img src="img/tile_yahoo.png"/></div>
+                <div><img src="img/tile_zune.png"/></div>
+            </div>
+            <input type="hidden" id="ic" />
+            <br />
+            <label class="wplbltxt" for="lb">Optional label</label>
+            <br />
+            <input type="text" id="lb" class="wpinput" style="width: 82%" maxlength="16" />
+            <br /><br />
+        </div>
+        <div id="fadingBarsG" style="visibility:hidden">
+            <div id="fadingBarsG_1" class="fadingBarsG"></div>
+            <div id="fadingBarsG_2" class="fadingBarsG"></div>
+            <div id="fadingBarsG_3" class="fadingBarsG"></div>
+            <div id="fadingBarsG_4" class="fadingBarsG"></div>
+            <div id="fadingBarsG_5" class="fadingBarsG"></div>
+            <div id="fadingBarsG_6" class="fadingBarsG"></div>
+            <div id="fadingBarsG_7" class="fadingBarsG"></div>
+            <div id="fadingBarsG_8" class="fadingBarsG"></div>
+        </div>
+        <div class="wptlb">
+            <input value="create" type="button" class="wpbtn" onclick="createUrl();"/>
+        </div>
+        <div id="promptCustomIcon" class="wpprompt">
+            <h3>Select custom icon</h3>
+            <label class="wplbltxt" for="cu">Icon url</label>
+            <br />
+            <input type="text" id="cu" class="wpinput" style="width: 82%" />
+            <br /><br />
+            <input value="undo" type="button" class="wpbtn" onclick="undoCustomIcon();" />
+            <input value="ok" type="button" class="wpbtn" onclick="confirmCustomIcon();" />
+        </div>
+        <img id="overlay" src="img/overlay-bg.png" class="wpoverlay" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script>
+            var _gaq=[['_setAccount','UA-30754085-2'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
