@@ -8,7 +8,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Windows Phone - Custom Tile Creator</title>
         <meta name="description" content="Windows Phone - Custom Tile Creator">
-        <meta name="viewport" content="width=device-width">
+		<meta name="keywords" content="windows,phone,mobile,tile,pin,start,windows phone 8,pin to start,custom,tiles,creator,ie,internet explorer,ie10,winphone,custom tile creator,tile color,link,icon,windowsphone,metro,modernui,htc 8x,nokia lumia,samsung ativ">
+        <meta name="author" content="cheller.info">
+		<meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="favicon.ico">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="css/normalize.css">
@@ -20,8 +22,9 @@
     <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
+
         <div style="margin: 5px">
-            <h5>Windows Phone <span class="wphgtxt">'Pin to start'</span> web tile creator</h5>
+            <h5>Windows Phone <span class="wphgtxt">'Pin to start'</span> web tile creator<img src="apple-touch-icon-precomposed.png" style="width:1px;height:1px;"></h5>
             <h1>creator
             <a class="wplink" href="javascript:$.pageslide({ direction: 'left', modal: true, href: 'http://www.cheller.info/wpt/help.html' })">help<a>
             <a class="wplink" href="javascript:$.pageslide({ direction: 'left', modal: true, href: 'http://www.cheller.info/wpt/about.html' })">about</a>
@@ -53,6 +56,7 @@
                 <option value="#6D8764">olive</option>
                 <option value="#657688">steel</option>
                 <option value="#765F89">gray</option>
+				<option value="#000000">black</option>
             </select>
             <br /><br />
             <label class="wplbltxt" for="ic">Icon</label>
@@ -64,7 +68,8 @@
                 <div><img src="img/tile_calendar.png"/></div>
                 <div><img src="img/tile_clock.png"/></div>
                 <div><img src="img/tile_contacts.png"/></div>
-                <div><img src="img/tile_device.png"/></div>
+                <div><img src="img/tile_deviant.png"/></div>
+				<div><img src="img/tile_device.png"/></div>
                 <div><img src="img/tile_dropbox.png"/></div>
                 <div><img src="img/tile_ebay.png"/></div>
                 <div><img src="img/tile_facebook.png"/></div>
@@ -73,6 +78,8 @@
                 <div><img src="img/tile_flash.png"/></div>
                 <div><img src="img/tile_gmail.png"/></div>
                 <div><img src="img/tile_gps.png"/></div>
+				<div><img src="img/tile_grooveshark.png"/></div>
+				<div><img src="img/tile_groupon.png"/></div>
                 <div><img src="img/tile_icq.png"/></div>
                 <div><img src="img/tile_ie.png"/></div>
                 <div><img src="img/tile_light.png"/></div>
@@ -93,6 +100,7 @@
                 <div><img src="img/tile_vodafone.png"/></div>
                 <div><img src="img/tile_weather.png"/></div>
                 <div><img src="img/tile_yahoo.png"/></div>
+				<div><img src="img/tile_youtube.png"/></div>
                 <div><img src="img/tile_zune.png"/></div>
             </div>
             <input type="hidden" id="ic" />
@@ -113,7 +121,7 @@
             <div id="fadingBarsG_8" class="fadingBarsG"></div>
         </div>
         <div class="wptlb">
-            <input value="create" type="button" class="wpbtn" onclick="createUrl();"/>
+            <input id="createTile" value="create" type="button" class="wpbtn" onclick="createUrl();"/>
         </div>
         <div id="promptCustomIcon" class="wpprompt">
             <h3>Select custom icon</h3>
@@ -134,5 +142,11 @@
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display:none;">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="TYH4GTVYSQW7Y">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" id="submit" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+        </form>
     </body>
 </html>

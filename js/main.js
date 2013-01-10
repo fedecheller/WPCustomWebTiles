@@ -57,3 +57,37 @@ function confirmCustomIcon(){
     setIcon(document.getElementById('imgCustom'));
     document.getElementById('promptCustomIcon').style.display = document.getElementById('overlay').style.display='none';
 }
+function pinAppTile(){
+    parent.document.getElementById('lc').value = "http://cheller.info/wpt/";
+    parent.document.getElementById('cl').selectedIndex = 0;
+    parent.document.getElementById('ic').value = "http://www.cheller.info/wpt/apple-touch-icon-144x144-precomposed.png";
+    parent.document.getElementById('lb').value = "tile creator";
+    parent.document.getElementById('createTile').click();
+}
+function shareIt(code){
+    var path;
+    switch(code)
+    {
+        case 1:
+            path = "http://www.facebook.com/sharer/sharer.php?u=http://cheller.info/wpt/";
+            break;
+        case 2:
+            path = "http://www.linkedin.com/shareArticle?url=http://cheller.info/wpt/";
+            break;
+        case 3:
+            path = "https://plus.google.com/share?url=http://cheller.info/wpt/";
+            break;
+        case 4:
+            path = "https://twitter.com/intent/tweet?text=windows phone custom tile creator&url=http://cheller.info/wpt/";
+            break;
+        case 5:
+            path = "http://www.reddit.com/submit?url=http://cheller.info/wpt/";
+            break;
+        case 6:
+            path = "mailto:?Subject=Windows Phone Custom Tile Creator&Body=http://cheller.info/wpt/";
+            break;
+        default:
+            path = undefined;
+    }
+    if(path) window.open(path, '_blank');
+}

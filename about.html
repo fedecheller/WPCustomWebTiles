@@ -8,7 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>About - Custom Tile Creator</title>
     <meta name="description" content="About - Custom Tile Creator">
-    <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content="windows,phone,mobile,tile,pin,start,windows phone 8,pin to start,custom,tiles,creator,ie,internet explorer,ie10,winphone,custom tile creator,tile color,link,icon,windowsphone,metro,modernui,htc 8x,nokia lumia,samsung ativ">
+    <meta name="author" content="cheller.info">
+	<meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="css/normalize.css">
@@ -21,19 +23,35 @@
     <h5>Windows Phone <span class="wphgtxt">'Pin to start'</span> web tile creator</h5>
     <h1>about</h1>
     <p>
-        <h3><img src="apple-touch-icon.png" title="Logo" alt="Logo" /><a class="wplink" href="mailto:fedecheller@yahoo.com">mail</a>&nbsp;&nbsp;<a class="wplink" href="https://twitter.com/fedecheller">twitter</a>&nbsp;&nbsp;<a class="wplink" href="https://github.com/fedecheller">github</a></h3>
-        Next features:
+        <h3><img src="apple-touch-icon.png" title="Logo" alt="Logo" /><a class="wplink" href="mailto:fedecheller@yahoo.com"><u>mail</u></a>&nbsp;&nbsp;<a class="wplink" href="https://twitter.com/fedecheller" target="_new"><u>twitter</u></a>&nbsp;&nbsp;<a class="wplink" href="https://github.com/fedecheller" target="_new"><u>github</u></a></h3>
+        you like it? <a class="wplink" href="javascript:pinAppTile();"><u>pin app to start</u><a>
+        <br/><br/>
+        you love it?<br/>
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!" onclick="parent.document.getElementById('submit').click();">
+        <br/><br/>
+        <label class="wplbltxt" for="shr">Share</label>
+        <br/>
+        <select id="shr" name="shr" onchange="shareIt(this.selectedIndex);" class="wpinput" style="width: 84%">
+            <option></option>
+            <option>facebook</option>
+            <option>linkedin</option>
+            <option>google plus</option>
+            <option>twitter</option>
+            <option>reddit</option>
+            <option>email</option>
+        </select>
+        <br/><br/>
+        next features:
         <ul>
             <li>flicker api images search</li>
-            <li>back function will not loose form values</li>
-            <li>share functionality for the app and the created links</li>
+            <li>share app link</li>
             <li>localize the application</li>
-            <li>find a way to upload custom image from phone</li>
+            <li>find a way to upload custom image from windows phone IE mobile</li>
         </ul>
-        Any bugs or suggestion, feel free to contact me...
+        any bugs or suggestion, feel free to contact me...
     </p>
 </div>
-    <a href="javascript:parent.$.pageslide.close();"><img src="img/left.png" style="border-style: none" title="Back" alt="Back" /></a>
+    <a href="javascript:if(parent.document.location.href.indexOf('index')>0){parent.$.pageslide.close();}else{document.location.href='index.html';}"><img src="img/left.png" style="border-style: none" title="Back" alt="Back" /></a>
     <br/><br/>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
