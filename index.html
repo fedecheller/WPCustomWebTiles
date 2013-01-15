@@ -25,17 +25,20 @@
 
         <div style="margin: 5px">
             <h5>Windows Phone <span class="wphgtxt">'Pin to start'</span> web tile creator<img src="apple-touch-icon-precomposed.png" style="width:1px;height:1px;"></h5>
-            <h1>creator
-            <a class="wplink" href="javascript:$.pageslide({ direction: 'left', modal: true, href: 'http://www.cheller.info/wpt/help.html' })">help<a>
-            <a class="wplink" href="javascript:$.pageslide({ direction: 'left', modal: true, href: 'http://www.cheller.info/wpt/about.html' })">about</a>
-            </h1>
+            <h2>creator
+            <a onfocus="this.blur()" class="wplink" href="javascript:$.pageslide({ direction: 'left', modal: true, href: 'http://www.cheller.info/wpt/help.html' })">help<a>
+            <a onfocus="this.blur()" class="wplink" href="javascript:$.pageslide({ direction: 'left', modal: true, href: 'http://www.cheller.info/wpt/about.html' })">about</a>
+            </h2>
             <label class="wplbltxt" for="lc">Url to Pin</label>
             <br />
-            http://<input type="text" id="lc" class="wpinput" style="width: 70%" />
+            <select name="pr" id="pr" class="wpinput">
+                <option value="0">http://</option>
+                <option value="1">https://</option>
+            </select><input type="text" id="lc" class="wpinput" style="width: 66%" />
             <br /><br />
             <label class="wplbltxt" for="cl">Tile color</label>
             <br />
-            <select name="cl" id="cl" class="wpinput" style="width: 84%">
+            <select name="cl" id="cl" class="wpinput" style="width: 92%">
                 <option value="highlight" selected>theme</option>
                 <option value="#A4C400">green lemon</option>
                 <option value="#60AA17">green</option>
@@ -63,6 +66,7 @@
             <br />
             <div class="wplist" onclick="selectIcon()">
                 <div><img src="img/tile_custom.png" id="imgCustom" alt="custom" title="custom"/></div>
+                <div><img src="img/tile_search.png" id="imgSearch" alt="search" title="search"/></div>
                 <div><img src="img/tile_bing.png"/></div>
                 <div><img src="img/tile_box.png"/></div>
                 <div><img src="img/tile_calendar.png"/></div>
@@ -107,7 +111,7 @@
             <br />
             <label class="wplbltxt" for="lb">Optional label</label>
             <br />
-            <input type="text" id="lb" class="wpinput" style="width: 82%" maxlength="16" />
+            <input type="text" id="lb" class="wpinput" style="width: 89%" maxlength="16" />
             <br /><br />
         </div>
         <div id="fadingBarsG" style="visibility:hidden">

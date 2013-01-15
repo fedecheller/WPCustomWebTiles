@@ -329,7 +329,7 @@ textarea {
 .wplist
 {
     border: 2px solid white;
-    width:82%;
+    width:89%;
     height: 60px;
     color: white;
     overflow:auto;
@@ -364,6 +364,12 @@ textarea {
 {
     border: 2px solid white;
     background-color: #000000;
+    color: white
+}
+.wpinput:focus
+{
+    border: 2px solid highlight;
+    background-color: highlight;
     color: white
 }
 .wpoverlay

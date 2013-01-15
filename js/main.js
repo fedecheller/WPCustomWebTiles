@@ -15,6 +15,7 @@ function createUrl(){
     document.getElementById('fadingBarsG').style.visibility = 'visible';
     var t = setTimeout(function(){
         var url = 'pin.html?cl=' + document.getElementById('cl').value;
+        url += '&amp;pr='+ removeArgs(document.getElementById('pr').value);
         url += '&amp;lc='+ removeArgs(document.getElementById('lc').value);
         url += '&amp;lb='+ removeArgs(document.getElementById('lb').value);
         url += '&amp;ic='+ removeArgs(document.getElementById('ic').value);
@@ -28,6 +29,9 @@ function selectIcon(){
         document.getElementById('overlay').style.width = "105%";
         document.getElementById('overlay').style.height = $.getDocHeight();
         document.getElementById('promptCustomIcon').style.display=document.getElementById('overlay').style.display='block';
+    }
+    else if(event.srcElement.id=='imgSearch'){
+        $.pageslide({ direction: 'left', modal: false, href: 'search.html' })
     }
     else if(event.srcElement.src){
         setIcon(event.srcElement);
@@ -90,4 +94,43 @@ function shareIt(code){
             path = undefined;
     }
     if(path) window.open(path, '_blank');
+}
+
+function checkSearch(){
+    if(event.charCode == 13 || event.keyCode == 13){
+        searchIcon(document.getElementById('src').value);
+    }
+}
+
+function searchIcon(search){
+    var q = removeArgs(search).replace("'","");
+    $.ajax({
+        type: 'GET',
+        url: 'https://www.googleapis.com/customsearch/v1?key=AIzaSyDoc8jmw30B5O_xgQLaN04x-IAETa3KCIY&cx=018188147824944029454:mb0cakrqtqs&q='+q+'&searchType=image&imgSize=small&alt=json&num=10&start=1&imgType=clipart',
+        async: false,
+        jsonpCallback: 'jsonCallback',
+        contentType: "application/json",
+        dataType: 'jsonp',
+        success: function(json) {
+            buildResult(json);
+        },
+        error: function(e) {
+            alert(e.message);
+        }
+    });
+}
+
+function selectSearchIcon(url){
+    parent.document.getElementById('imgSearch').src = url;
+    parent.setIcon(parent.document.getElementById('imgSearch'));
+    parent.document.getElementById('ic').value = url;
+    parent.$.pageslide.close();
+}
+
+function buildResult(json){
+    var html = "";
+    for(var i=0; i < json.items.length; i++){
+        html += "<img src=" + json.items[i].link + " onclick=selectSearchIcon('" + json.items[i].link + "') />";
+    }
+    document.getElementById('srr').innerHTML = html;
 }

@@ -16,7 +16,7 @@
     <div id="TileOverlay" style='height: 100%; width: 100%; top: 0px; left: 0px; position: fixed; color: black; visibility: hidden;z-index:1'>
         <img id="TileIcon" width="320" height="320" />
         <div id="TileInfo" style='margin-top: 40px;color:white'>Pin to start using the menu...
-            <br /><br /><a href="index.html"><img src="img/left.png" style="border-style: none" title="Back" alt="Back" /></a>
+            <br /><br /><a onfocus="this.blur()" href="index.html"><img src="img/left.png" style="border-style: none" title="Back" alt="Back" /></a>
         </div>
     </div>
     <script>
@@ -35,9 +35,9 @@
         }
         else
         {
-            //var url = (getQSParam("xt") == "0") ? "http://" : "https://";
+            var pr = (getQSParam("pr") == "1") ? "https://" : "http://";
             var url = getQSParam("lc");
-            document.location.href = "http://" + url;
+            document.location.href = pr + url;
         }
     </script>
 </body>
